@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>html</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/bootstrap.js"></script>
+
+      <style>
+          #ert
+          {
+              color:red;
+              font-size:20px;
+          }
+      </style>
+        <script>
+            function kttendn(){
+                var ten=document.getElementById('txttdn').value;
+                var regten=/^([A-Z]{1}[a-z]*\s)*([A-Z]{1}[a-z]*)$/;
+                if(regten.test(ten))
+                {
+                    document.getElementById('ret').innerHTML="(*)";
+                }
+                else
+                {
+                    document.getElementById('ret').innerHTML="(*)ten sai";
+                }
+
+            }
+            function ktmk(){
+                var mk=document.getElementById('txtmk').value;
+                var regmk=/^(?=.*[A-Za-z])(?=.*[0-9]).{6,}$/;
+                if(regmk.test(mk))
+                {
+                    document.getElementById('mk').innerHTML="(*)";
+                }
+                else{
+                    document.getElementById('mk').innerHTML="(*)sai mat khau";
+                }
+        }
+            function ktmk2(){
+                var mk2=document.getElementById('txtmk2').value;
+                var mk=document.getElementById('txtmk').value;
+                if(mk2==mk)
+                {
+                    
+                    document.getElementById('mk2').interHTML="*";
+                    return true;
+                }
+                else
+                {
+
+                    document.getElementById('mk2').interHTML="mat khau ko dung";
+                    return flase;
+                }
+            }
+            function ktns(){
+                var ns=new  Date(document.getElementById('txtns').value);
+                //ns=new Date(ns);
+                var nam = ns.getFullYear();
+                if (nam < 2002)
+           
+            {
+
+                document.getElementById('erns').interHTML = "dung";
+                return true;
+            }
+            else{
+                document.getElementById('erns').interHTML= "nam sinh <2000";
+                return false;
+            }
+        }
+        </script>
+    </head>
+    <body>
+                <div class="container border" style="height:auto;">
+                    <div class="row border">
+                        <div class="col-xm-12 col-sm-12 col-md-12 col-lg-12 "><h1>logo</h1></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 border"style="height: 300px;">left</div>
+                        <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 border"style="height: auto;">
+                        
+                            <from acction="">
+                                <div class="row">
+                                    <div class="col-12"><h2 class="text-center">dang ky tai khoan</h2></div>
+                                </div>
+
+                                <div class=" row form-group">
+                                    <div class="col-3">
+                                        <lable for="ten dang nhap ">ten dang nhap </lable>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="text" name="" onblur="kttendn();" id="txttdn" placeholder="ten dang nhap " class="form-control" >
+                                        <div id="ret"></div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row form-group">
+                                    <div class="col-3">
+                                        <label for="nhap lai mat khau"> mat khau</label>
+                                    </div>
+                                    <div class="col-9"><input type="password" class="form-control" id="txtmk" onblur="ktmk();">
+                                    <div id="mk"></div>
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-3">
+                                        <label for="nhap lai mat khau">nhap lai mat khau</label>
+                                    </div>
+                                    <div class="col-9"><input onblur="ktmk2();" type="password" class="form-control" id="txtmk2">
+                                    <div id="mk2"></div>
+                                    </div>
+                                </div>
+                                <div class="col-12"><h2 class="text-center">thong tin ca nhan</h2></div>
+                                <div class="row form-group">
+                                    <div class="col-3">
+                                        <label for="ho ten">ho ten</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="text" name="" id="txtten"  placeholder="nhap ho ten bat buoc" class="form-control"></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-3">
+                                        <label for="ngay sinh">ngay sinh</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="date" onblur="ktns()" name="" id="txtns" class="form-control">
+                                        <div id="erns"></div>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-3">
+                                        <label for="gioi tinh">gioi tinh</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <label for="">
+                                            <input type="radio" name="" id="gt" class="form-check-input" value="nam">nam
+                                        </label>
+                                        <label for="">
+                                            <input type="radio" name="" id="gt" class="form-check-input" value="nu">nu
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-3">
+                                        <label for="dia chi">dia chi</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="diachi" placeholder="nhap dia chi" class="name form-control">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-3">
+                                        <label for="dien thoai">dien thoai</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="text" name="" id="txtdt" placeholder="nhap dien thoai vao" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-3">
+                                        <label for="enail">emai</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="text" name=""  placeholder="nhap email" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-12  ">
+                                        <input type="button" value="dang ky" class="btn btn-dark">
+                                        <input type="button" value="huy" class="btn btn-dark">
+                                    </div>
+                                </div>
+
+                            </from>
+                        
+                        
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 border"style="height: 300px;">right</div>
+                    </div>
+                   
+                        <div class="col-xm-12 col-sm-12 col-md-12 col-lg-12 border "><h1>footer</h1></div>
+                   
+                </div>
+            
+    </body>
+</html>
